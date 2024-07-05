@@ -7,6 +7,7 @@ public class Message {
     public final String asText;
     public final double asDouble;
     public final Date date;
+    private String topic;
 
     public Message(byte[] data) {
         this.data = data;
@@ -21,6 +22,14 @@ public class Message {
 
     public Message(double value) {
         this(String.valueOf(value));
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
+
+    public String getTopic() {
+        return this.topic;
     }
 
     private double toDouble(String text) {
